@@ -72,8 +72,8 @@ main {
 
 .fb-login {
     font-weight: 700;
-    font-size: 95%;
-    color: rgb(85, 0, 255);
+    font-size: 80%;
+    color: #3b5998;
     margin-bottom: 30px;
     margin-top: 10px;
 }
